@@ -5,17 +5,14 @@
 using namespace std;
 #define ll long long
 
-ll fun(ll arr[],ll n){
-    sort(arr,arr+n);
-    if(arr[0]!=1) return 1;
-    else{
-    for(int i=1;i<n;i++){
-        if(arr[i]-arr[i-1]!=1){
-            return arr[i-1]+1;
-        }
-    }
-    return -1;
-    }
+void fun(ll arr[],ll n){
+   sort(arr,arr+n); 
+   ll theft=0;
+   for(ll i=1;i<n;i++){
+    theft+=(arr[i]-arr[i-1]-1);
+   }
+   cout<<theft<<endl;
+   
 }
 
 int main(){
@@ -24,14 +21,11 @@ int main(){
     freopen("output.txt","w",stdout);
     #endif
     ll n;
-    string s,t;
     cin>>n;
     ll p[n];
     for(ll i=0;i<n;i++){
         cin>>p[i];
     }
-    // cin>>s>>t;
-    
-    cout<<fun(p,n)<<endl;
+    fun(p,n);
     return 0;
 }
