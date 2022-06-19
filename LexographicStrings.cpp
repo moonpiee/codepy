@@ -3,10 +3,15 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
 int main(){
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+    #endif
     // make yourself comfortable with pointers. ex: char, string etc.,
     string s;
+    int n;
+    cin>>n;
     cin>>s;
     queue<char>q;
     int i=0;
@@ -15,7 +20,7 @@ int main(){
         i++;
     } //what if queue of strings? didnt do any of such quests
     string p,r;
-    int n1=s.length(),n2;
+    int n1=n,n2;
     while(q.empty()==false){
          n2=p.length();
         if(p.empty()==true||p[n2-1]>=q.front()){
