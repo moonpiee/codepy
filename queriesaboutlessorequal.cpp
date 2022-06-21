@@ -5,7 +5,7 @@
 using namespace std;
 #define ll long long
 
-ll bin_fun(ll f[],ll n, ll k){
+ll bin_fun(ll f[],ll n, ll k){ //binary check this
     ll l=0,h=n-1;
     while(l<=h){
         ll mid=h-(h-l)/2;
@@ -19,7 +19,7 @@ ll bin_fun(ll f[],ll n, ll k){
                 l=mid+1;
             }
     }
-    return l-1;
+    return l;
 }
 
 int main(){
@@ -50,13 +50,18 @@ int main(){
     // }
     for(ll i=0;i<b;i++){
         ll k=q[i];
-        if(k>=p[a-1]){
+        if(k<p[0]){
+            cout<<0<<endl;
+            
+        }
+        else if(k>p[a-1]){
             cout<<f[a-1]<<endl;
+            
         }
-        else
-        {
-           cout<<bin_fun(p,a,k)+1<<endl;
+        else{
+            cout<<bin_fun(p,a,k)+1<<endl;
         }
+        
     }
     
     return 0;
