@@ -3,21 +3,18 @@
 #include<string>
 #define ll long long
 using namespace std;
-#define mod 1e9+7
+ll mod = 1000000007;
 
-ll modulo(ll x, ll n){
-    return (x%n + n)%n;
-}
 
 ll Jzzhu(ll a,ll b, ll n){
-    n=modulo(n,mod);
-    ll f[n+1];
-    f[1]=a;
-    f[2]=b;
-    for(ll i=3;i<=n;i++){
+    
+    ll f[6],ans=0;
+    f[0]=a,f[1]=b;
+    for(ll i=2;i<=5;i++){
         f[i]=(f[i-1]-f[i-2]);
     }
-    return modulo(f[n],mod);
+    ans=f[(n-1)%6];
+    return ans>=0 ? ans%mod : (ans%mod + mod)%mod; 
 }
 
 int main(){
