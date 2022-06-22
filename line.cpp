@@ -5,6 +5,26 @@
 using namespace std;
 #define ll long long
 
+ll line(ll n, ll m){
+    if(n<0) return 0;
+    if(n==0||n==1){
+        return 1;
+    }
+    else{
+        return line(n-2,m)+line(n-1,m);
+    }
+}
+ll line1(ll n,ll m){
+    ll f[n+1];
+    for(ll i=0;i<n;i++){
+        f[i]=0;
+    }
+    f[0]=1,f[1]=1;
+    for(ll i=2;i<=n;i++){
+        f[i]=f[i-2]%m+f[i-1]%m;
+    }
+    return f[n]%m;
+}
 
 int main(){
     #ifndef ONLINE_JUDGE
@@ -14,32 +34,6 @@ int main(){
     ll n,m;
     string s,t;
     cin>>n>>m;
-    if(n==2){
-        cout<<n%m<<endl;
-    }
-    else{
-        ll j=0,ans=0,sw=0;
-
-        ll mid=n/2,i=0;
-        while(j<=mid)
-        {
-            if(n-3-i >=0)
-            {
-                sw=2*(1+(n-3-i));
-                i++;
-                ans=ans+sw;
-                
-            }
-            else{
-                ans++;
-            }
-            j=j+1;
-        }
-
-
-
-
-        cout<<ans%m<<endl;
-    }
+    cout<<line1(n,m)%m<<endl;
     return 0;
 }
