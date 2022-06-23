@@ -19,10 +19,7 @@ ll fun(ll arr[],ll n){
 }
 
 int main(){
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt","r",stdin);
-    freopen("output.txt","w",stdout);
-    #endif
+
     ll n;
     string s,t;
     cin>>n;
@@ -30,6 +27,21 @@ int main(){
     for(ll i=0;i<n;i++){
         cin>>arr[i];
     }
-    cout<<fun(arr,n)<<endl;
+    ll j=0;
+    while(1){
+        if(arr[j]==0){
+            cout<<(j+1);
+            break;
+        }
+        else{
+            j=(j+1)%n;
+            for(ll i=0;i<n;i++){
+            if(arr[i]!=0)
+                arr[i]--;
+            }
+        }
+        
+    }
+    // cout<<fun(arr,n)<<endl;
     return 0;
 }
