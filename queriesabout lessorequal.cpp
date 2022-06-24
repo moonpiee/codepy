@@ -19,7 +19,7 @@ ll bin_fun(ll f[],ll n, ll k){
                 l=mid+1;
             }
     }
-    return l-1;
+    return l;
 }
 
 int main(){
@@ -41,17 +41,17 @@ int main(){
     sort(p,p+a);
     ll f[a];
     f[0]=1;
-    for(int i=1;i<a;i++){
-        if(f[i]>=f[i])
-            f[i]=f[i-1]+1;
-    }
-    for(int i=1;i<a;i++){
-       cout<<f[i]<<endl;
-    }
-    // for(ll i=0;i<b;i++){
-    //     ll k=q[i];
-    //     cout<<bin_fun(p,a,k)+1<<endl;
+    // for(int i=1;i<a;i++){
+    //     if(f[i]>=f[i])
+    //         f[i]=f[i-1]+1;
     // }
+    // for(int i=1;i<a;i++){
+    //    cout<<f[i]<<endl;
+    // }
+    for(ll i=0;i<b;i++){
+        ll k=q[i];
+        cout<<bin_fun(p,a,k)+1<<endl;
+    }
     
     
 
