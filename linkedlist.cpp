@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 struct Node_ll{
     int data;
     struct Node_ll *prev;
