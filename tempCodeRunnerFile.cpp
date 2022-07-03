@@ -1,16 +1,43 @@
 #include<iostream>
-#include<vector>
 #include<bits/stdc++.h>
+#include<string>
+#include<vector>
 using namespace std;
 #define ll long long
-int main(){
-    ll n;
+int main(){ //speed up strings
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+    #endif
+    int n;
+    string s;
     cin>>n;
-    ll f[n+1];
-    f[0]=1;
-    for(int i=1;i<=n;i++){
-        f[i]=f[i-1]+f[i/2]+f[i/3];
+   while(n--){
+    cin>>s;
+    int l=s.length();
+    int ml=INT_MAX,i,j;
+    bool found=false;
+    for( i=0;i<l;i++){
+        unordered_set<int>se;
+        se.insert(s[i]);
+        for( j=i+1;j<l;j++){
+            if(se.find(s[j])==se.end()){
+                se.insert(s[j]);
+            }
+            if(se.size()==3){
+                found=true;
+                ml=min(ml,j-i+1);
+            }
+        }
     }
-    cout<<f[n]<<endl;
+    if(!found){
+        cout<<0<<endl;
+    }
+    else{
+    cout<<ml<<endl;
+    }
+   }
+    
+    
     return 0;
 }
