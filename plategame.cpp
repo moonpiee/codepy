@@ -3,11 +3,17 @@ using namespace std;
 #include<math.h>
 #include<bits/stdc++.h>
 int main(){
-    int a,b,r;
+    int a,b,r,d;
     cin>>a>>b>>r;
-    int pi=22/7;
-    int d=floor(a*b/(pi*r*r));
-    //cout<<d<<endl; // first-> 1
+    // double pi=3.14159265358979323;
+    // int d=floor(a*b/(pi*r*r));
+    // cout<<d<<endl; // first-> 1
+    if(min(a,b)>=2*r){
+        d=floor(min(a,b)/(2*r));
+    }
+    else{
+       d=1; 
+    }
     if(d%2!=0){
         cout<<"First"<<endl;
     }
