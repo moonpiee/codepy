@@ -7,7 +7,7 @@ public:
     int size=0;
     vector<int> v;
     int f=0,r=0,cap=0;
-    MyCircularQueue(int k) {
+    CircularQueue(int k) {
         v.resize(k);
         cap=k;
     }
@@ -59,16 +59,16 @@ public:
 
 int main(){
     CircularQueue cq(3);
-    cout<<"Is queue empty? "<<cq.isEmpty()<<endl;
-    cout<<"Add 10 to the queue: "<<cq.enQueue(10)<<endl;
-    cout<<"Front element of queue: "<<cq.Front()<<endl;
-    cq.enQueue(20);
-    cout<<"Rear element of queue: "<<cq.Rear()<<endl;
-    cout<<"Remove the front element in the queue: "<<cq.deQueue()<<endl;
-    cout<<"Add 20 to the queue: "<<cq.enQueue(20)<<endl;
-    cout<<"Add 30 to the queue: "<<cq.enQueue(30)<<endl;
-    cout<<"Add 40 to the queue: "<<cq.enQueue(40)<<endl;
-    cout<<"Add 50 to the queue: "<<cq.enQueue(50)<<endl;
-    cout<<"Is queue full?: "<<cq.IsFull()<<endl;
-    
+    std::cout<<"Is queue empty? "<<cq.isEmpty()<<endl;
+    std::cout<<"Add 10 to the queue: "<<cq.enQueue(10)<<endl;
+    std::cout<<"Front element of queue: "<<cq.Front()<<endl;
+    std::cout<<"Rear element of queue: "<<cq.Rear()<<endl;
+    std::cout<<"Remove the front element in the queue: "<<cq.deQueue()<<endl;
+    std::cout<<"Add 20 to the queue: "<<cq.enQueue(20)<<endl;
+    std::cout<<"Add 30 to the queue: "<<cq.enQueue(30)<<endl;
+    std::cout<<"Add 40 to the queue: "<<cq.enQueue(40)<<endl;
+    std::cout<<"Add 50 to the queue: "<<cq.enQueue(50)<<endl;
+    std::cout<<"Is queue full?: "<<cq.isFull()<<endl;    
+    std::cout<<"Front element of queue: "<<cq.Front()<<endl;
+    std::cout<<"Rear element of queue: "<<cq.Rear()<<endl;
 }

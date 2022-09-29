@@ -69,6 +69,5 @@ int main(){
     cout<<"Add 30 to the queue: "<<cq.enQueue(30)<<endl;
     cout<<"Add 40 to the queue: "<<cq.enQueue(40)<<endl;
     cout<<"Add 50 to the queue: "<<cq.enQueue(50)<<endl;
-    cout<<"Is queue full?: "<<cq.IsFull()<<endl;
-    
+    cout<<"Is queue full?: "<<cq.IsFull()<<endl;    
 }
